@@ -26,5 +26,4 @@ FileArgument = open('insilico-fragments_200bp_500bp.fasta','r')
 ChrSizeMap = getChrSize(FileArgument)
 
 for id,seq in ChrSizeMap:
-	print (id,seq)
-	print ("\n")
+	print id+"\t"+seq
