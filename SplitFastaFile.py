@@ -1,9 +1,8 @@
 '''
 Usage: 
-1. Change the file name in line 6.
-2. Run as 'python SplitFastaFile.py'
+python SplitFastaFile.py <inputFile>
 '''
-file = open("data.fa",'r')
+import sys
 
 def getOutFileName(s): # {{{
 
@@ -27,7 +26,7 @@ def getOutFileName(s): # {{{
 
 seq = ''
 
-for lines in file:
+for lines in open(sys.argv[1],'r'):
 	if (lines.startswith(">")):
 		id = lines
 		outFile = lines.strip().replace(">","")
