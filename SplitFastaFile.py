@@ -1,8 +1,8 @@
-"""
+'''
 Usage: 
 1. Change the file name in line 6.
 2. Run as 'python SplitFastaFile.py'
-
+'''
 file = open("data.fa",'r')
 
 def getOutFileName(s): # {{{
