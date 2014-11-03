@@ -1,6 +1,6 @@
 '''
 Usage: 
-python SplitFastaFile.py <inputFile>
+python SplitFastaFile.py <inputFile.fa>
 '''
 import sys
 
@@ -18,6 +18,7 @@ def getOutFileName(s): # {{{
     s = s.replace("<=", "LE")
     s = s.replace("<", " LT")
     s = s.replace(">=", "GE")
+    s = s.replace("|","_")
     s+=".fasta"
 
     return s.strip()
