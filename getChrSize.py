@@ -20,7 +20,7 @@ def getChrSize(fileName):
 
 Args = str(sys.argv)
 
-FileArgument = open('insilico-fragments_200bp_500bp.fasta','r')
+FileArgument = open(sys.argv[1],'r')
 #OutFile = open('Args[1]','w')
 
 ChrSizeMap = getChrSize(FileArgument)
