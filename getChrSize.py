@@ -26,4 +26,4 @@ FileArgument = open(sys.argv[1],'r')
 ChrSizeMap = getChrSize(FileArgument)
 
 for id,seq in ChrSizeMap:
-	print id+"\t"+seq
+	print id+"\t"+str(seq)
