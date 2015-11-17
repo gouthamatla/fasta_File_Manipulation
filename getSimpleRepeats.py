@@ -7,6 +7,11 @@ Requirements: BioPython, bedtools
 
 usage:
 python getSimpleRepeats.py in.fasta | bedtools merge > out.bed
+
+or to make it faster, run on individual chromosomes
+
+parallel "python getSimpleRepeats.py {} | bedtools merge > {/.}.bed " ::: *.fa
+
 '''
 
 import re
