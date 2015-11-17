@@ -1,9 +1,11 @@
 '''
+This script extract the coordinates of simple Repeat of 4. along with one extra base. This is important because fo a SNP
+i sfound in between two repeats but not with in the repeat, those shoud also be accounted. AAAAGAAAAA
+And if a SNP is present at the end or begening of simple repeat GAAAAAA ot AAAAAG, those should be accounted.
 Requirements: BioPython
 
 usage:
 python getSimpleRepeats.py in.fasta | bedtools merge > out.bed
-
 '''
 
 import re
@@ -12,7 +14,7 @@ from Bio import SeqIO
 
 def return_simpleRepeats(id,seqence):
   pattern=r"A{4,}|G{4,}|C{4,}|T{4,}"
-  repeat = ["\t".join((id, str(m.start()+1),str(m.end()+1))) for m in re.finditer(pattern,seqence)]
+  repeat = ["\t".join((id, str(m.start()),str(m.end()+1))) for m in re.finditer(pattern,seqence)]
   if repeat:
 		for i in repeat:
 			print i	
