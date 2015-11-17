@@ -1,8 +1,9 @@
 '''
-This script extract the coordinates of simple Repeat of 4. along with one extra base. This is important because fo a SNP
-i sfound in between two repeats but not with in the repeat, those shoud also be accounted. AAAAGAAAAA
+This script extract the coordinates of simple Repeat of 4. along with one extra base on either side. This is important because fo a SNP
+is found in between two repeats but not with in the repeat, those shoud also be accounted. AAAAGAAAAA
 And if a SNP is present at the end or begening of simple repeat GAAAAAA ot AAAAAG, those should be accounted.
-Requirements: BioPython
+
+Requirements: BioPython, bedtools
 
 usage:
 python getSimpleRepeats.py in.fasta | bedtools merge > out.bed
