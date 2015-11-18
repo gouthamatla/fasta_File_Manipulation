@@ -13,6 +13,10 @@ or to make it faster, run on individual chromosomes
 
 parallel "python getSimpleRepeats.py {} | bedtools merge > {/.}.bed " ::: *.fa
 
+To write the output in a bed format and extract the repeats in fasta format simultaniously :
+
+python  getSimpleRepeats.py in.fa | bedtools merge 2>&1 | tee  out.bed | bedtools getfasta -fi in.fasta -bed - -fo repeats_out.fasta
+
 '''
 
 import re,sys
