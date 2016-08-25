@@ -19,6 +19,7 @@ def getOutFileName(s): # {{{
     s = s.replace("<", " LT")
     s = s.replace(">=", "GE")
     s = s.replace("|","_")
+    s = s.replace("\s+","+")
     s+=".fasta"
 
     return s.strip()
